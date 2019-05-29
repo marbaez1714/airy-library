@@ -2,7 +2,7 @@ import React from "react";
 import "../../tokens/ColorTokens.scss";
 export default function ColorExamples() {
   return (
-    <div>
+    <div className="example">
       <h3 style={{ textAlign: "left" }}>Colors!</h3>
       <div className="colorGrid">
         <div className="colorWrapper">

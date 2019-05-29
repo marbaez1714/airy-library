@@ -5,7 +5,9 @@ import "./App.scss";
 function App() {
   return (
     <div className="App">
-      <header className="App-header" />
+      <header className="App-header">
+        <h2>Airy Library!</h2>
+      </header>
       <DisplayPage />
     </div>
   );

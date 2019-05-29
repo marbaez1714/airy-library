@@ -1,23 +1,18 @@
 import React from "react";
 import Button from "../Button.js";
+
 export default function ButtonExamples() {
   return (
-    <div>
-      <h3 style={{ textAlign: "left" }}>Buttons!</h3>
-      <div className="button-wrapper">
-        <Button type="primary" />
+    <div className="example">
+      <div>
+        <h3 style={{ textAlign: "left" }}>Buttons!</h3>
       </div>
       <div className="button-wrapper">
-        <Button type="secondary" />
-      </div>
-      <div className="button-wrapper">
-        <Button type="success" />
-      </div>
-      <div className="button-wrapper">
-        <Button type="warning" />
-      </div>
-      <div className="button-wrapper">
-        <Button type="error" />
+        <Button type="primary" text="primary" />
+        <Button type="secondary" text="secondary" />
+        <Button type="success" text="success" />
+        <Button type="warning" text="warning" />
+        <Button type="error" text="error" />
       </div>
     </div>
   );

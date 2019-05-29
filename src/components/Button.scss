@@ -1,140 +1,80 @@
 @import "../tokens/ColorTokens.scss";
 
-.button-wrapper {
-  margin: 20px;
-}
-.button-border {
-  position: relative;
-  // left and right border
-  &:before {
-    position: absolute;
-    top: 0;
-    left: -0.15em;
-    width: 0.15em;
-    height: 100%;
-    background: $dark;
-    display: flex;
-    content: "";
-  }
-  &:after {
-    position: absolute;
-    top: 0;
-    right: -0.15em;
-    width: 0.15em;
-    height: 100%;
-    background: $dark;
-    display: flex;
-    content: "";
-  }
-}
+$button-font-size: 1.5em;
+$button-padding: 0.25em 0.5em;
+$button-border-width: 0.25em;
+$button-hover-padding: 0.25em 0.4em 0.15em 0.5em;
+$button-hover-border-width: 0.35em;
+$button-border: $button-border-width solid $dark;
 
 .airy-button {
-  font-size: 1.5em;
-  padding: 0.3em;
-  padding: 0.3em;
-  min-width: 120px;
+  font-size: $button-font-size;
+  padding: 0;
   width: auto;
-  border-left: none;
-  border-top: none;
-  border-right-width: 0.15em;
-  border-bottom-width: 0.15em;
+  border-left-width: 0;
+  border-right-width: 0;
+  border-top: $button-border;
+  border-bottom: $button-border;
   position: relative;
-  // hover state
-  &:hover {
-    padding-right: 0.15em;
-    padding-bottom: 0.15em;
-    border-right-width: 0.3em;
-    border-bottom-width: 0.3em;
-    &:before {
-      top: -0.15em;
-      left: 0;
-      width: calc(100% + 0.3em);
-    }
-    &:after {
-      bottom: -0.45em;
-      left: 0;
-      width: calc(100% + 0.3em);
-    }
-
+  .button-inner {
+    padding: $button-padding;
+    border-style: solid;
+    border-width: 0 $button-border-width $button-border-width 0;
+    transition: all 100ms cubic-bezier(0.02, 0.91, 0.45, 0.96);
     &:active {
-      padding-right: 0.3em;
-      padding-bottom: 0.45em;
-      padding-left: 0.15em;
-      padding-top: 0.15em;
-      &:before {
-        top: -0.3em;
-        left: -0.15em;
-        width: calc(100% + 0.3em);
-      }
-      &:after {
-        bottom: -0.15em;
-        left: -0.15em;
-        width: calc(100% + 0.3em);
+      border-width: $button-border-width 0 0 $button-border-width;
+    }
+    &:hover {
+      padding: $button-hover-padding;
+      border-width: 0 $button-hover-border-width $button-hover-border-width 0;
+      &:active {
+        padding: $button-padding;
+        border-width: $button-border-width 0 0 $button-border-width;
       }
     }
-  }
-  // active state
-  &:active {
-    border-right: none;
-    border-bottom: none;
-    border-left: solid;
-    border-top: solid;
-    border-left-width: 0.15em;
-    border-top-width: 0.15em;
-    &:before {
-      top: -0.3em;
-      left: -0.15em;
+    //styles
+    &.primary {
+      color: $white;
+      background: $primary;
+      border-color: $primary-dark;
     }
-    &:after {
-      bottom: -0.15em;
-      left: -0.15em;
+    &.secondary {
+      color: $dark;
+      background: $white;
+      border-color: $grey;
+    }
+    &.success {
+      color: $white;
+      background: $success;
+      border-color: $success-dark;
+    }
+    &.warning {
+      color: $dark;
+      background: $warning;
+      border-color: $warning-dark;
+    }
+    &.error {
+      color: $dark;
+      background: $error;
+      border-color: $error-dark;
     }
   }
-  // top and bottom border
   &:before {
-    position: absolute;
-    top: -0.15em;
-    left: 0;
-    height: 0.15em;
-    width: calc(100% + 0.15em);
-    background: $dark;
-    display: flex;
     content: "";
+    top: 0;
+    left: -$button-border-width;
+    height: 100%;
+    position: absolute;
+    width: $button-border-width;
+    background: $dark;
   }
   &:after {
-    position: absolute;
-    bottom: -0.3em;
-    left: 0;
-    height: 0.15em;
-    width: calc(100% + 0.15em);
-    background: $dark;
-    display: flex;
     content: "";
-  }
-  // styles
-  &.primary {
-    color: $white;
-    background: $primary;
-    border-color: $primary-dark;
-  }
-  &.secondary {
-    color: $dark;
-    background: $white;
-    border-color: $grey;
-  }
-  &.success {
-    color: $white;
-    background: $success;
-    border-color: $success-dark;
-  }
-  &.warning {
-    color: $dark;
-    background: $warning;
-    border-color: $warning-dark;
-  }
-  &.error {
-    color: $dark;
-    background: $error;
-    border-color: $error-dark;
+    top: 0;
+    right: -$button-border-width;
+    height: 100%;
+    position: absolute;
+    width: $button-border-width;
+    background: $dark;
   }
 }

@@ -1,0 +1,53 @@
+@import "../tokens/ColorTokens.scss";
+
+$progress-border-width: 0.25em;
+$progress-border: $progress-border-width solid $dark;
+
+.progress-bar {
+  display: flex;
+  width: 100%;
+  height: 3em;
+  border-left-width: 0;
+  border-right-width: 0;
+  border-top: $progress-border;
+  border-bottom: $progress-border;
+  position: relative;
+  .progress-inner {
+    display: flex;
+    border: none;
+    margin: 4px;
+    &.primary {
+      background: $primary;
+    }
+    &.secondary {
+      background: $white;
+    }
+    &.success {
+      background: $success;
+    }
+    &.warning {
+      background: $warning;
+    }
+    &.error {
+      background: $error;
+    }
+  }
+  &:before {
+    content: "";
+    top: 0;
+    left: -$progress-border-width;
+    height: 100%;
+    position: absolute;
+    width: $progress-border-width;
+    background: $dark;
+  }
+  &:after {
+    content: "";
+    top: 0;
+    right: -$progress-border-width;
+    height: 100%;
+    position: absolute;
+    width: $progress-border-width;
+    background: $dark;
+  }
+}

@@ -11,10 +11,8 @@ export default function Button(props) {
   } = props;
 
   return (
-    <div className="button-border">
-      <button className={`airy-button ${type} ${className}`} onClick={onClick} {...rest}>
-        {text}
-      </button>
-    </div>
+    <button className={`airy-button  ${className}`} onClick={onClick} {...rest}>
+      <div className={`button-inner ${type}`}>{text}</div>
+    </button>
   );
 }
