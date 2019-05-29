@@ -1,0 +1,70 @@
+$white: #ffffff;
+$grey: #cecfd7;
+$nes-grey: #d7d7d7;
+
+$dark: #212529;
+
+$primary: #209cee;
+$primary-dark: #006bb3;
+
+$success: #92cc41;
+$success-dark: #4aa52e;
+
+$warning: #f7d51d;
+$warning-dark: #e59400;
+
+$error: #e76e55;
+$error-dark: #8c2022;
+
+.colorGrid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.colorWrapper {
+  display: flex;
+  padding: 10px;
+  margin: 2px;
+  background: #555a5f;
+}
+.colorBox {
+  display: flex;
+  height: 50px;
+  width: 50px;
+  &.white {
+    background: $white;
+  }
+  &.grey {
+    background: $grey;
+  }
+  &.nes-grey {
+    background: $nes-grey;
+  }
+  &.dark {
+    background: $dark;
+  }
+  &.primary {
+    background: $primary;
+  }
+  &.primary-dark {
+    background: $primary-dark;
+  }
+  &.success {
+    background: $success;
+  }
+  &.success-dark {
+    background: $success-dark;
+  }
+  &.warning {
+    background: $warning;
+  }
+  &.warning-dark {
+    background: $warning-dark;
+  }
+  &.error {
+    background: $error;
+  }
+  &.error-dark {
+    background: $error-dark;
+  }
+}

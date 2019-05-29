@@ -1,0 +1,140 @@
+@import "../tokens/ColorTokens.scss";
+
+.button-wrapper {
+  margin: 20px;
+}
+.button-border {
+  position: relative;
+  // left and right border
+  &:before {
+    position: absolute;
+    top: 0;
+    left: -0.15em;
+    width: 0.15em;
+    height: 100%;
+    background: $dark;
+    display: flex;
+    content: "";
+  }
+  &:after {
+    position: absolute;
+    top: 0;
+    right: -0.15em;
+    width: 0.15em;
+    height: 100%;
+    background: $dark;
+    display: flex;
+    content: "";
+  }
+}
+
+.airy-button {
+  font-size: 1.5em;
+  padding: 0.3em;
+  padding: 0.3em;
+  min-width: 120px;
+  width: auto;
+  border-left: none;
+  border-top: none;
+  border-right-width: 0.15em;
+  border-bottom-width: 0.15em;
+  position: relative;
+  // hover state
+  &:hover {
+    padding-right: 0.15em;
+    padding-bottom: 0.15em;
+    border-right-width: 0.3em;
+    border-bottom-width: 0.3em;
+    &:before {
+      top: -0.15em;
+      left: 0;
+      width: calc(100% + 0.3em);
+    }
+    &:after {
+      bottom: -0.45em;
+      left: 0;
+      width: calc(100% + 0.3em);
+    }
+
+    &:active {
+      padding-right: 0.3em;
+      padding-bottom: 0.45em;
+      padding-left: 0.15em;
+      padding-top: 0.15em;
+      &:before {
+        top: -0.3em;
+        left: -0.15em;
+        width: calc(100% + 0.3em);
+      }
+      &:after {
+        bottom: -0.15em;
+        left: -0.15em;
+        width: calc(100% + 0.3em);
+      }
+    }
+  }
+  // active state
+  &:active {
+    border-right: none;
+    border-bottom: none;
+    border-left: solid;
+    border-top: solid;
+    border-left-width: 0.15em;
+    border-top-width: 0.15em;
+    &:before {
+      top: -0.3em;
+      left: -0.15em;
+    }
+    &:after {
+      bottom: -0.15em;
+      left: -0.15em;
+    }
+  }
+  // top and bottom border
+  &:before {
+    position: absolute;
+    top: -0.15em;
+    left: 0;
+    height: 0.15em;
+    width: calc(100% + 0.15em);
+    background: $dark;
+    display: flex;
+    content: "";
+  }
+  &:after {
+    position: absolute;
+    bottom: -0.3em;
+    left: 0;
+    height: 0.15em;
+    width: calc(100% + 0.15em);
+    background: $dark;
+    display: flex;
+    content: "";
+  }
+  // styles
+  &.primary {
+    color: $white;
+    background: $primary;
+    border-color: $primary-dark;
+  }
+  &.secondary {
+    color: $dark;
+    background: $white;
+    border-color: $grey;
+  }
+  &.success {
+    color: $white;
+    background: $success;
+    border-color: $success-dark;
+  }
+  &.warning {
+    color: $dark;
+    background: $warning;
+    border-color: $warning-dark;
+  }
+  &.error {
+    color: $dark;
+    background: $error;
+    border-color: $error-dark;
+  }
+}
