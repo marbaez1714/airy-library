@@ -4,7 +4,7 @@ Here's a fun little project that I put together in a few hours. I really enjoy c
 # Demo Page
 To run the demo page, use `npm start` or `yarn start`. Use whichever you want. I don't judge.
 
-## Current Components 
+# Current Components 
 |Component        | Add Date      | Video Game Theme |
 |-----------------|---------------|------------------|
 | _Buttons_       | _5/29_        | ___Yes___        |
